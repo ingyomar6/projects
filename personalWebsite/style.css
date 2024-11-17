@@ -1,0 +1,66 @@
+.gradient-background {
+  background: linear-gradient(300deg, #f9cee7, #f4b8da ,#eea1cd,#e68bbe,#e68bbe,#eea1cd, #f4b8da, #f9cee7);
+  background-size: 180% 180%;
+  animation: gradient-animation 5s ease infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.facts{
+  background-color: #eea1cd;
+  color:#ffeff8
+}
+
+.icon{
+  background-color: #f675be;
+}
+
+#name{
+  color:#fde4f2;
+  font-family: "Dancing Script", cursive;
+}
+
+#head p{
+  color:#fde4f2;
+}
+
+h1 {
+  color: whitesmoke;
+}
+
+#aboutME {
+  background-color: rgb(24, 61, 35);
+  color: rgb(138, 185, 125);
+}
+#aboutME p{
+  color: rgb(138, 185, 125);
+}
+
+#aboutME h1{
+  color: rgb(138, 185, 125);
+}
+.heart{
+  background-color:#f8f4f6;
+  border-radius: 100px;
+}
+
+
+.foot{
+  background-color: rgb(24, 61, 35);
+  color: rgb(138, 185, 125);
+}
+
+
+
+
+
