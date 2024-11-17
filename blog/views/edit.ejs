@@ -1,0 +1,16 @@
+
+<%- include("partials/header.ejs") %>
+<body class="body">
+
+    <div class="postSection">
+        <form action="/edit/<%= post.id %>" method="POST">
+            <div class="inputBoxes">
+                <input class="postTitle" type="text" name="title" placeholder="Title" maxlength="25">
+                <textarea class="postData" type="text" name="content" placeholder="So whats on your mind?"><%= post.content %></textarea>
+            </div>
+            <div class="submitBox">
+                <input type="submit" class="submitBoxButtons" value="Submit Edit">
+            </div>
+        </form>
+    </div>
+  </body>

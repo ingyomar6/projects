@@ -1,0 +1,52 @@
+
+<body class="b">
+    <%- include("partials/header.ejs") %>
+
+    <div class="container my-5 postpop rounded-5">
+        <div class="p-5 text-center rounded-4">
+
+          <h1 class="mt-5 h1" style="color:white">Tell us about those bubbles you have flying around in your head</h1>
+          <div class="d-inline-flex gap-2 mb-5 mt-4">
+            <form action="/post">
+              <button class="butt" type="submit">
+                Pop!
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+
+
+        <% if (locals.posts && posts.length!=0) { %>
+
+          <div class="container my-5">
+              <div class="position-relative p-4 text-center rounded-5 postsjumbotron">
+                <div class="postscontainer">
+
+                  <% posts.forEach(post => { %>
+
+                      <div class="d-flex gap-3 w-100 posts">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="rgb(255, 64, 118)" class="bi bi-postage-heart-fill" viewBox="0 0 16 16">
+      <path d="M4.5 3a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5zM8 11C2.175 7.236 6.336 4.31 8 5.982 9.664 4.309 13.825 7.236 8 11"/>
+      <path d="M4.5 0a1 1 0 0 1-2 0H1v1a1 1 0 0 1 0 2v1a1 1 0 0 1 0 2v1a1 1 0 0 1 0 2v1a1 1 0 1 1 0 2v1a1 1 0 1 1 0 2v1h1.5a1 1 0 1 1 2 0h1a1 1 0 1 1 2 0h1a1 1 0 1 1 2 0h1a1 1 0 1 1 2 0H15v-1a1 1 0 1 1 0-2v-1a1 1 0 1 1 0-2V9a1 1 0 1 1 0-2V6a1 1 0 1 1 0-2V3a1 1 0 1 1 0-2V0h-1.5a1 1 0 1 1-2 0h-1a1 1 0 1 1-2 0h-1a1 1 0 0 1-2 0zM4 14a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1z"/>
+    </svg>
+                        <div class="postcontent" onclick="window.location='/show/<%= post.id %>'">
+                            <h6 class="mb-0"><%= post.title %></h6>
+                            <p class="mb-0 opacity-75"><%= post.content.slice(0, 80) %>...</p>
+                        </div>
+                        <div class="edit_delete">
+                          <form class="opacity-50 text-nowrap" action="/Edit/<%= post.id %>" method="GET"><button type="submit">edit</button></form>
+                          <form class="opacity-50 text-nowrap" action="/Delete/<%= post.id %>" method="POST"><button type="submit">delete</button></form>
+                        </div>
+                      </div>
+                      <% }) %>
+                      
+                </div>
+              </div>
+          </div>  
+        <% } else { %>
+
+        <% } %>
+
+</body>
